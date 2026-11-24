@@ -1,13 +1,13 @@
-package com.banditdev.standardprojekt;
+package com.banditdev.website;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StandardprojektApplication {
+public class websiteApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StandardprojektApplication.class, args);
+		SpringApplication.run(websiteApplication.class, args);
 	}
 
 }

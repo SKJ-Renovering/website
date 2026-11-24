@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.banditdev</groupId>
-	<artifactId>standardprojekt</artifactId>
+	<artifactId>website</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>standardprojekt</name>
 	<description>standardprojekt</description>
