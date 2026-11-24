@@ -3,7 +3,32 @@ package com.banditdev.website.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "employees")
 public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long employeeId;
+
+    @Column(unique = true, nullable = false)
+    private String employeeUsername;
+
+    @Column(nullable = false)
+    private String employeePassword;
+
+    @Column(nullable = false)
+    private String employeeFirstName;
+
+    @Column(nullable = false)
+    private String employeeLastName;
+
+    @Column(nullable = false)
+    private String employeePhone;
+
+    @Column(unique = true, nullable = false)
+    private String employeeMail;
+
+
     public Employee(String employeeUsername, String employeePassword, String employeeFirstName, String employeeLastName, String employeePhone, String employeeMail) {
         this.employeeUsername = employeeUsername;
         this.employeePassword = employeePassword;
@@ -16,20 +41,6 @@ public class Employee {
     public Employee() {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long employeeId;
-
-    @Column(unique = true, nullable = false)
-    private String employeeUsername;
-
-    @Column(unique = true, nullable = false)
-    private String employeePassword;
-
-    private String employeeFirstName;
-    private String employeeLastName;
-    private String employeePhone;
-    private String employeeMail;
 
     public Long getEmployeeId() {
         return employeeId;
