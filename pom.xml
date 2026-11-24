@@ -11,8 +11,8 @@
 	<groupId>com.banditdev</groupId>
 	<artifactId>website</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>standardprojekt</name>
-	<description>standardprojekt</description>
+	<name>website</name>
+	<description>website</description>
 	<url/>
 	<licenses>
 		<license/>
