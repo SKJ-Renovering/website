@@ -20,7 +20,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/requests")
-    public ResponseEntity<List<Request>> getRequestsRepliedFalse() {
-        return ResponseEntity.ok(requestService.getRequestsRepliedFalse());
+    public ResponseEntity<List<Request>> getRequestsByIsRepliedFalseOrderByDateTimeReceivedDesc() {
+        return ResponseEntity.ok(requestService.getRequestsByIsRepliedFalseOrderByDateTimeReceivedDesc());
     }
 }

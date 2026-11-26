@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface RequestRepository extends JpaRepository<Request, Long> {
 
-    List<Request> findByIsRepliedFalse();
+    List<Request> findByIsRepliedFalseOrderByDateTimeReceivedDesc();
 }
