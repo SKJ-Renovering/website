@@ -1,0 +1,422 @@
+/* ==========================================================================
+   SKJ renovering: frontpage.css
+   Stil til forsiden. Kræver theme.css (farver og skrifttyper).
+   ========================================================================== */
+
+/* ---------- Header ---------- */
+.fp-header {
+    background: var(--color-moss);
+    border-bottom: 4px solid var(--color-salt-orange);
+}
+
+.fp-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 96px;
+}
+
+.fp-logo {
+    display: block;
+    line-height: 0;
+}
+
+.fp-logo img {
+    display: block;
+    height: 68px;
+    width: auto;
+}
+
+.fp-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.fp-nav a:not(.btn) {
+    color: var(--color-mint);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* ---------- Fotos (pladsholdere indtil rigtige billeder findes) ---------- */
+.fp-photo {
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    color: #3C5A48;
+    font-size: 13px;
+    font-weight: 500;
+    background: repeating-linear-gradient(135deg, var(--color-mint) 0 12px, #D8E9DC 12px 24px);
+}
+
+.fp-photo--dark {
+    color: var(--color-mint);
+    background: repeating-linear-gradient(135deg, #27503E 0 12px, #2B5744 12px 24px);
+}
+
+/* ---------- Hero ---------- */
+.fp-hero {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    min-height: 700px;
+}
+
+.fp-hero__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 72px 64px 72px max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+}
+
+.fp-hero__text .eyebrow {
+    margin-bottom: 28px;
+}
+
+.fp-hero h1 {
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.04;
+}
+
+.fp-hero__lead {
+    max-width: 460px;
+    margin: 32px 0 44px;
+    font-size: 19px;
+}
+
+.fp-hero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 36px;
+}
+
+.fp-hero__photo {
+    min-height: 604px;
+    margin: 48px max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))) 48px 0;
+}
+
+/* ---------- Budskab ---------- */
+.fp-statement {
+    padding-top: 140px;
+    padding-bottom: 140px;
+    text-align: center;
+}
+
+.fp-statement .eyebrow {
+    margin-bottom: 28px;
+}
+
+.fp-statement h2 {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: clamp(30px, 3.6vw, 46px);
+    line-height: 1.22;
+}
+
+/* ---------- Fra skov til hjem ---------- */
+.fp-flow {
+    padding-bottom: 140px;
+}
+
+.fp-flow__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--color-moss);
+}
+
+.fp-flow__item {
+    padding: 32px 32px 0;
+    border-left: 1px solid var(--color-stone);
+}
+
+.fp-flow__item:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.fp-flow__item:last-child {
+    padding-right: 0;
+}
+
+.fp-flow__step {
+    margin-bottom: 16px;
+    font: 500 13px var(--font-body);
+    letter-spacing: 0.16em;
+    color: var(--color-forest);
+}
+
+.fp-flow__item h3 {
+    margin-bottom: 12px;
+    font-size: 26px;
+}
+
+.fp-flow__item p {
+    font-size: 15px;
+}
+
+/* ---------- Bæredygtighed (mørk sektion) ---------- */
+.fp-sustain {
+    padding: 130px 0;
+    background: var(--color-moss);
+    color: #CFE3D6;
+}
+
+.fp-sustain__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 96px;
+    align-items: center;
+}
+
+.fp-sustain__photo {
+    height: 640px;
+}
+
+.fp-sustain .eyebrow {
+    margin-bottom: 24px;
+    color: var(--color-light-green);
+}
+
+.fp-sustain h2 {
+    margin-bottom: 56px;
+    font-size: clamp(32px, 3.4vw, 44px);
+    line-height: 1.12;
+    color: var(--color-sand);
+}
+
+.fp-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 40px;
+}
+
+.fp-stat__value {
+    font: 300 clamp(44px, 5vw, 72px) var(--font-heading);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--color-light-green);
+}
+
+.fp-stat__label {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.fp-sustain__more {
+    display: inline-block;
+    margin-top: 56px;
+    border-bottom: 1px solid var(--color-light-green);
+    padding-bottom: 4px;
+    color: var(--color-sand);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* ---------- Projekter ---------- */
+.fp-projects {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.fp-projects__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 56px;
+}
+
+.fp-projects__head h2 {
+    font-size: clamp(32px, 3.2vw, 42px);
+}
+
+.fp-projects__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 320px 320px;
+    gap: 28px;
+}
+
+.fp-projects__grid .fp-photo:first-child {
+    grid-row: span 2;
+}
+
+/* ---------- Sådan fungerer det ---------- */
+.fp-process {
+    background: var(--color-mint);
+}
+
+.fp-process .container {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+.fp-process h2 {
+    margin-bottom: 56px;
+    font-size: clamp(30px, 3vw, 38px);
+}
+
+.fp-process__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-moss);
+}
+
+.fp-process__num {
+    margin-bottom: 12px;
+    font: 300 40px var(--font-heading);
+    color: var(--color-forest);
+}
+
+.fp-process__grid h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.fp-process__grid p {
+    font-size: 15px;
+}
+
+/* ---------- Opfordring ---------- */
+.fp-cta {
+    background: var(--color-peach);
+}
+
+.fp-cta .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+
+.fp-cta h2 {
+    max-width: 640px;
+    font-size: clamp(30px, 3.4vw, 44px);
+    line-height: 1.1;
+}
+
+.fp-cta .btn {
+    white-space: nowrap;
+}
+
+/* ---------- Footer ---------- */
+.fp-footer {
+    background: var(--color-moss);
+    color: #CFE3D6;
+}
+
+.fp-footer .container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.fp-footer__logo {
+    display: block;
+    height: 56px;
+    width: auto;
+    margin-bottom: 16px;
+}
+
+.fp-footer address {
+    font-style: normal;
+    line-height: 1.9;
+}
+
+/* ---------- Mobil og tablet ---------- */
+@media (max-width: 900px) {
+    .fp-header__inner {
+        flex-wrap: wrap;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .fp-nav {
+        flex-wrap: wrap;
+        gap: 12px 24px;
+    }
+
+    .fp-hero,
+    .fp-sustain__grid,
+    .fp-footer .container {
+        grid-template-columns: 1fr;
+    }
+
+    .fp-hero {
+        min-height: 0;
+    }
+
+    .fp-hero__text {
+        padding: 56px var(--gutter);
+    }
+
+    .fp-hero__photo {
+        min-height: 320px;
+        margin: 0 var(--gutter) 48px;
+    }
+
+    .fp-statement,
+    .fp-flow,
+    .fp-projects {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .fp-flow__grid,
+    .fp-process__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .fp-flow__item,
+    .fp-flow__item:first-child,
+    .fp-flow__item:last-child {
+        padding: 24px 0 0;
+        border-left: 0;
+    }
+
+    .fp-sustain {
+        padding: 80px 0;
+    }
+
+    .fp-sustain__grid {
+        gap: 56px;
+    }
+
+    .fp-sustain__photo {
+        height: 320px;
+    }
+
+    .fp-projects__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 320px 240px 240px;
+    }
+
+    .fp-projects__grid .fp-photo:first-child {
+        grid-row: auto;
+    }
+
+    .fp-cta .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+}
+
+@media (max-width: 560px) {
+    .fp-flow__grid,
+    .fp-process__grid,
+    .fp-stats {
+        grid-template-columns: 1fr;
+    }
+}

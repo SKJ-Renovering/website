@@ -1,0 +1,122 @@
+/* ==========================================================================
+   SKJ renovering: theme.css
+   Fælles farver, skrifttyper og grundstil. Bruges af alle sider
+   (forside, forespørgselsformular, dashboard).
+   Farverne er fra gruppens farvetema (farveTemaWebsite.png).
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+    /* Kernefarver */
+    --color-forest: #2F7D5B;        /* Skovgrøn: primær (knapper, links, logo) */
+    --color-moss: #1E3D2F;          /* Mosgrøn: tekst (overskrifter, brødtekst, footer) */
+    --color-salt-orange: #FF7A1F;   /* Saltorange: accent. Brug altid Mosgrøn tekst på den */
+
+    /* Lyse flader og neutrale */
+    --color-light-green: #A8D5B5;   /* Lysegrøn: grafik, diagrammer */
+    --color-mint: #E6F2E8;          /* Mint: sektioner, kort */
+    --color-peach: #FBE3C4;         /* Fersken: advarsler, nye forespørgsler */
+    --color-sand: #FAF7F0;          /* Sand: sidebaggrund */
+    --color-stone: #DCD6C8;         /* Sten: kanter, streger */
+    --color-slate: #5B6660;         /* Skifer: sekundær tekst */
+
+    /* Tekst */
+    --color-text: var(--color-moss);
+    --color-text-muted: var(--color-slate);
+    --color-text-on-dark: var(--color-sand);
+
+    /* Skrifttyper */
+    --font-heading: "Outfit", sans-serif;
+    --font-body: "Inter", sans-serif;
+
+    /* Layout */
+    --container: 1160px;
+    --gutter: 48px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-sand);
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: var(--color-moss);
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: var(--color-forest);
+}
+
+/* ---------- Genbrugelige dele ---------- */
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-forest);
+}
+
+/* Primær knap: Saltorange med Mosgrøn tekst */
+.btn {
+    display: inline-block;
+    min-height: 44px;
+    padding: 16px 32px;
+    border: 0;
+    font: 500 16px var(--font-body);
+    text-decoration: none;
+    cursor: pointer;
+    background: var(--color-salt-orange);
+    color: var(--color-moss);
+}
+
+.btn:hover {
+    filter: brightness(0.95);
+}
+
+.btn--small {
+    padding: 11px 24px;
+    font-size: 15px;
+}
+
+.link-underline {
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    color: var(--color-moss);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.rule {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid var(--color-stone);
+}
+
+@media (max-width: 900px) {
+    :root {
+        --gutter: 24px;
+    }
+}
