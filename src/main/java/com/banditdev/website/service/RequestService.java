@@ -20,8 +20,8 @@ public class RequestService {
         return requestRepository.findAll();
     }
 
-    public List<Request> getRequestsRepliedFalse() {
-        return requestRepository.findByIsRepliedFalse();
+    public List<Request> getRequestsByIsRepliedFalseOrderByDateTimeReceivedDesc() {
+        return requestRepository.findByIsRepliedFalseOrderByDateTimeReceivedDesc();
     }
 
     public Optional<Request> getRequestById(Long id) {
