@@ -15,9 +15,11 @@ import java.util.Optional;
 public class RequestService {
 
     private final RequestRepository requestRepository;
+    private final RequestValidator requestValidator;
 
-    public RequestService(RequestRepository requestRepository) {
+    public RequestService(RequestRepository requestRepository, RequestValidator requestValidator) {
         this.requestRepository = requestRepository;
+        this.requestValidator = requestValidator;
     }
 
     public List<Request> getAllRequests() {
@@ -34,8 +36,7 @@ public class RequestService {
 
     @Transactional
     public RequestResponseDTO createRequest(CreateRequestDTO dto) {
-
-        // TODO validate dto (step 3)
+        requestValidator.validate(dto);
 
         Request request = new Request(
                 trimOrNull(dto.requestBody()),
