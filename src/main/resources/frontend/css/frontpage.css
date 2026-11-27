@@ -125,8 +125,13 @@ figure.fp-photo figcaption {
 .fp-hero__actions {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px 36px;
+    flex-wrap: nowrap;
+    gap: 20px 28px;
+}
+
+.fp-hero__actions .btn,
+.fp-hero__actions .link-underline {
+    white-space: nowrap;
 }
 
 .fp-hero__photo {
@@ -181,6 +186,50 @@ figure.fp-photo figcaption {
     border-top: 3px solid var(--color-salt-orange);
 }
 
+.fp-slider__dots {
+    align-items: center;
+}
+
+.fp-slider__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 20px;
+    margin-right: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-sand);
+    cursor: pointer;
+}
+
+.fp-slider__toggle:hover {
+    color: var(--color-salt-orange);
+}
+
+.fp-slider__toggle:focus-visible {
+    outline: 2px solid var(--color-light-green);
+    outline-offset: 1px;
+}
+
+/* Pause-ikon (to streger). Når slideshowet er på pause, bliver det til en afspil-trekant. */
+.fp-slider__icon {
+    display: block;
+    width: 10px;
+    height: 12px;
+    border-left: 3px solid currentColor;
+    border-right: 3px solid currentColor;
+}
+
+.fp-slider.is-paused .fp-slider__icon {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 10px;
+    border-color: transparent transparent transparent currentColor;
+}
+
 .fp-slider__dot {
     width: 36px;
     height: 20px;
@@ -223,7 +272,7 @@ figure.fp-photo figcaption {
 /* ---------- Budskab ---------- */
 .fp-statement {
     padding-top: 140px;
-    padding-bottom: 140px;
+    padding-bottom: 72px;
     text-align: center;
 }
 
@@ -244,8 +293,18 @@ figure.fp-photo figcaption {
 }
 
 .fp-flow__grid {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+}
+
+/* Linjen over trinene er lidt længere end indholdet i begge ender */
+.fp-flow__grid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(-1 * var(--gutter));
+    right: calc(-1 * var(--gutter));
     border-top: 1px solid var(--color-moss);
 }
 
@@ -556,6 +615,10 @@ figure.fp-photo figcaption {
 }
 
 @media (max-width: 560px) {
+    .fp-hero__actions {
+        flex-wrap: wrap;
+    }
+
     .fp-flow__grid,
     .fp-process__grid,
     .fp-stats {
