@@ -117,6 +117,10 @@ public class Request {
         return dateTimeReceived;
     }
 
+    public void setDateTimeReceived(LocalDateTime dateTimeReceived) {
+        this.dateTimeReceived = dateTimeReceived;
+    }
+
     // Leaves out customer personal data (name, email, phone, message) so it never ends up in logs.
     @Override
     public String toString() {

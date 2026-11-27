@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap");
+
+:root {
+--green: #2F7D5B;
+--green-dark: #1E3D2F;
+--orange: #FF7A1F;
+--green-light: #A8D5B5;
+--mint: #E6F2E8;
+--peach: #FBE3C4;
+--sand: #FAF7F0;
+--stone: #DCD6C8;
+--slate: #5B6660;
+
+--radius: 12px;
+}
+
+body {
+margin: 0;
+background: var(--sand);
+color: var(--green-dark);
+font-family: "Inter", system-ui, sans-serif;
+line-height: 1.5;
+}
+
+#app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+h1 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin: 0 0 1.5rem;
+}
+
+#status {
+    color: var(--slate);
+}
+
+.request-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border: 1px solid var(--stone);
+    border-radius: var(--radius);
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+.request-table th,
+.request-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--stone);
+}
+
+.request-table th {
+    background: var(--mint);
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.request-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.request-table tbody tr:hover {
+    background: var(--sand);
+}
