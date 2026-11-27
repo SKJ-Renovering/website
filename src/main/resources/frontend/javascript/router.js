@@ -1,16 +1,18 @@
 "use strict";
 
+import { renderFrontpage } from "./views/frontpage.js";
 import { renderDashboard } from "./views/dashboard.js";
 
-// Kun rute lavet til dashboard, skal tilføjes til alle sider der bliver tilføjet
+// Alle sider skal have en rute her
 // (husk også at tilføje stien i RoutingController)
 const routes = [
+    { path: "/", view: renderFrontpage, title: "Forside" },
     { path: "/dashboard", view: renderDashboard, title: "Dashboard" },
 ];
 
-// Sti der bruges når ingen rute matcher - fx "/"
-//Skal ændres til login, når Spring security er med.
-const defaultPath = "/dashboard";
+// Sti der bruges når ingen rute matcher - forsiden.
+// Skal evt. ændres til login, når Spring security er med.
+const defaultPath = "/";
 
 export function navigateTo(path) {
     if (path !== window.location.pathname) {
@@ -34,6 +36,6 @@ async function render() {
         return;
     }
 
-    document.title = `SKJ Renovering – ${route.title}`;
+    document.title = route.path === "/" ? "SKJ renovering" : `SKJ Renovering – ${route.title}`;
     await route.view(app);
 }

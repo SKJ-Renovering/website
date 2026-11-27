@@ -8,7 +8,7 @@ web
 
 ## Users
 
-Visitors to the website of **SKJ Renovation**, a fictional Danish carpentry and renovation company. They are private homeowners looking for a carpenter they can trust with work on their home. They come to the front page to find out who SKJ is, whether the company fits their values, and how to get in touch about a job.
+Visitors to the website of **SKJ Renovering**, a Danish carpentry and renovation company. The company is real (owned by a friend's father); the group is allowed to use its public details and pictures for this school project. They are private homeowners looking for a carpenter they can trust with work on their home. They come to the front page to find out who SKJ is, whether the company fits their values, and how to get in touch about a job.
 
 A secondary audience, not served by the front page, is SKJ's employees. They will later use a logged-in area to read, answer and archive incoming customer requests.
 
@@ -16,7 +16,7 @@ A secondary audience, not served by the front page, is SKJ's employees. They wil
 
 The site presents SKJ Renovation and turns visitors into inquiries. Behind the scenes, customers send a request (name, email, optional phone, message), and employees reply by email and archive it. Success for the front page means a visitor understands what SKJ stands for and takes the step of contacting them.
 
-This is a school group project (three students). The customer is imaginary.
+This is a school group project (three students). The site is a school assignment, not the company's live website.
 
 ## Positioning
 
@@ -35,7 +35,12 @@ This is a school group project (three students). The customer is imaginary.
 - Stack: Spring Boot 4 (Java 25) backend with JPA and H2/MySQL. The frontend is plain HTML/CSS/JS in `src/main/resources/frontend/`, served under `/frontend/**`.
 - The data model has Request, ArchivedRequest and Employee.
 - Group workflow: work happens only on the current feature branch. Never touch `main` or teammates' branches.
-- Undecided: the service list, location/town, address, phone number and email, opening hours, and the names of the family or founders.
+- Company details (from the company's own website, skjrenovering.dk, checked 2026-11-27):
+  - Phone `91 30 93 51`, email `nicholaiboggild@gmail.com`, address Julius Thomsens Plads 4, kl. tv, København (no postcode on their site), CVR `30201774`.
+  - Open every day 08:00 – 17:00. Areas: Storkøbenhavn and Nordsjælland.
+  - Services: total entreprise, vinduesmontering, terrasser & udeliv, træarbejde & nybygning, tilbygninger og ombygninger, tagarbejde og konstruktion.
+  - Their site says "siden 1998" but also "30+ års erfaring". These don't match exactly; ask the family before using a founding year.
+- Still undecided: the names of the family or founders, and any certifications, percentages or energy claims. Do not invent them.
 
 ## Branch Rules
 

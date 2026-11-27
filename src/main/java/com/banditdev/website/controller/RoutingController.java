@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class RoutingController {
 
-    // Standard-endpoint: viser forsiden på http://localhost:8080/
+    // Alle sider leveres af den samme index.html. Routeren i frontend/javascript/router.js
+    // vælger, hvilken side der vises. Tilføj nye stier her og i routes i router.js.
     // (frontend-filerne ligger under /frontend/**, jf. application.properties)
-    @GetMapping("/")
-    public String frontpage() {
+    @GetMapping({"/", "/dashboard"})
+    public String page() {
         return "forward:/frontend/index.html";
     }
 }
