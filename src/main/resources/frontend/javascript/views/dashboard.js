@@ -2,7 +2,7 @@
 
 // Henter alle requests der ikke er besvaret endnu
 async function fetchRequests() {
-    const response = await fetch("/employee/requests");
+    const response = await fetch("/api/employee/requests");
     if (!response.ok) {
         throw new Error("HTTP " + response.status);
     }

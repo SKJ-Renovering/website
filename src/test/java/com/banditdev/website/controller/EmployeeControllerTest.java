@@ -32,7 +32,7 @@ class EmployeeControllerTest {
         r.setDateTimeReceived(LocalDateTime.of(2026, 11, 26, 10, 0));
         when(requestService.getRequestsByIsRepliedFalseOrderByDateTimeReceivedDesc()).thenReturn(List.of(r));
 
-        mockMvc.perform(get("/employee/requests"))
+        mockMvc.perform(get("/api/employee/requests"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith("application/json"))
                 .andExpect(jsonPath("$.length()").value(1))
@@ -50,7 +50,7 @@ class EmployeeControllerTest {
     void getRequests_returnsEmptyJson() throws Exception {
         when(requestService.getRequestsByIsRepliedFalseOrderByDateTimeReceivedDesc()).thenReturn(List.of());
 
-        mockMvc.perform(get("/employee/requests"))
+        mockMvc.perform(get("/api/employee/requests"))
                 .andExpect(status().isOk())
                 .andExpect(content().json("[]"));
     }
