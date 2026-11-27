@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class RoutingController {
 
-    // Fanger alle endpoints der bliver ramt direkte i addresse barren, og sender til index.html som router til den rigtige side.
+    // Alle sider leveres af den samme index.html. Routeren i frontend/javascript/router.js
+    // vælger, hvilken side der vises. Tilføj nye stier her og i routes i router.js.
+    // (frontend-filerne ligger under /frontend/**, jf. application.properties)
     @GetMapping({"/", "/dashboard"})
-    public String frontend() {
+    public String page() {
         return "forward:/frontend/index.html";
     }
 }
