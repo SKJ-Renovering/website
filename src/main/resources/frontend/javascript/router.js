@@ -11,7 +11,7 @@ const routes = [
 ];
 
 // Sti der bruges når ingen rute matcher - forsiden.
-// Skal evt. ændres til login, når Spring security er med.
+//TODO Skal evt. ændres til login, når Spring security er med. evt aftalt noget andet?
 const defaultPath = "/";
 
 export function navigateTo(path) {
