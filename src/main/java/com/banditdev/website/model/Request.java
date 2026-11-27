@@ -1,6 +1,7 @@
 package com.banditdev.website.model;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -31,8 +32,8 @@ public class Request {
     @Column(nullable = false)
     private Boolean isReplied = false;
 
+    @Column(nullable = false, updatable = false)
     private LocalDateTime dateTimeReceived;
-
 
     public Request() {
     }
@@ -120,14 +121,11 @@ public class Request {
         this.dateTimeReceived = dateTimeReceived;
     }
 
+    // Leaves out customer personal data (name, email, phone, message) so it never ends up in logs.
     @Override
     public String toString() {
         return "Request{" +
-                "requestBody='" + requestBody + '\'' +
-                ", customerFirstName='" + customerFirstName + '\'' +
-                ", customerLastName='" + customerLastName + '\'' +
-                ", customerEmail='" + customerEmail + '\'' +
-                ", customerPhoneNumber='" + customerPhoneNumber + '\'' +
+                "requestId=" + requestId +
                 ", isRead=" + isRead +
                 ", isReplied=" + isReplied +
                 ", dateTimeReceived=" + dateTimeReceived +
